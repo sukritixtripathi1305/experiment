@@ -3,51 +3,69 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Just Start</title>
+<title>Pip – Just Start</title>
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#111827">
+<meta name="theme-color" content="#ffd6e0">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <main>
   <header>
-    <h1>Just Start</h1>
+    <h1>Pip <span>✿</span></h1>
     <div class="stats"><span id="streak"></span><span id="doneCount"></span></div>
   </header>
 
   <div id="banner" class="banner" hidden></div>
 
+  <section class="pip-wrap">
+    <div id="bubble" class="bubble">hi!</div>
+    <svg id="pip" class="pip" viewBox="0 0 200 180" aria-hidden="true">
+      <path class="ear" d="M42 62 L38 14 L84 44 Z"/>
+      <path class="ear" d="M158 62 L162 14 L116 44 Z"/>
+      <path class="ear-in" d="M46 50 L45 28 L66 43 Z"/>
+      <path class="ear-in" d="M154 50 L155 28 L134 43 Z"/>
+      <ellipse class="body" cx="100" cy="102" rx="82" ry="70"/>
+      <ellipse class="belly" cx="100" cy="128" rx="46" ry="34"/>
+      <ellipse class="blush" cx="52" cy="108" rx="14" ry="8"/>
+      <ellipse class="blush" cx="148" cy="108" rx="14" ry="8"/>
+      <g id="face"></g>
+    </svg>
+  </section>
+
   <section id="focus" class="card focus" hidden>
-    <p class="label">The one you keep avoiding</p>
+    <p class="label">Pip thinks we should start…</p>
     <h2 id="focusTitle"></h2>
     <p id="focusMeta" class="meta"></p>
-    <label class="step">Smallest possible first step
-      <input id="focusStep" placeholder="e.g. open the file and write one sentence">
+    <label class="step">What's the tiniest first step? 🌱
+      <input id="focusStep" placeholder="e.g. open the doc and type one word">
     </label>
     <div id="timer" class="timer" hidden>
-      <div id="clock">02:00</div>
-      <div id="timerMsg"></div>
+      <div class="ring">
+        <svg viewBox="0 0 120 120"><circle class="track" cx="60" cy="60" r="52"/><circle id="arc" class="arc" cx="60" cy="60" r="52"/></svg>
+        <div id="clock">02:00</div>
+      </div>
+      <div id="timerMsg" class="meta"></div>
     </div>
     <div class="actions" id="focusActions">
-      <button id="sprintBtn" class="primary">Start 2-minute sprint</button>
-      <button id="doneBtn">Already done</button>
-      <button id="skipBtn" class="ghost">Not now</button>
+      <button id="sprintBtn" class="primary">Do 2 minutes with me 🌸</button>
+      <button id="doneBtn">Already done ✓</button>
+      <button id="skipBtn" class="ghost">Maybe later 🥺</button>
     </div>
     <div class="actions" id="timerActions" hidden>
-      <button id="keepBtn" class="primary">Keep going 25 min</button>
-      <button id="finishBtn">Finished it</button>
+      <button id="keepBtn" class="primary">Keep going 25 min 💪</button>
+      <button id="finishBtn">I did it! 🎉</button>
       <button id="stopBtn" class="ghost">Stop</button>
     </div>
   </section>
 
   <form id="addForm" class="card add">
-    <input id="title" placeholder="What are you putting off?" required autocomplete="off">
+    <input id="title" placeholder="What have you been putting off? 🙈" required autocomplete="off">
     <div class="row">
-      <label>Dread
+      <label>How much dread?
         <select id="dread">
-          <option value="1">1 – meh</option><option value="2">2</option>
-          <option value="3" selected>3</option><option value="4">4</option>
-          <option value="5">5 – ugh</option>
+          <option value="1">1 · meh</option><option value="2">2 · eh</option>
+          <option value="3" selected>3 · hmm</option><option value="4">4 · ugh</option>
+          <option value="5">5 · 😱</option>
         </select>
       </label>
       <label>Due <input type="date" id="due"></label>
@@ -56,23 +74,23 @@
   </form>
 
   <section class="card">
-    <h3>Backlog <small>(most avoided first)</small></h3>
+    <h3>Pile of dodged things <small>(most avoided first)</small></h3>
     <ul id="list"></ul>
-    <p id="empty" class="meta" hidden>Nothing pending. Suspiciously productive.</p>
+    <p id="empty" class="meta" hidden>Nothing here! Pip is napping 💤</p>
   </section>
 
   <section class="card">
-    <h3>Nudges</h3>
+    <h3>Pip's little nudges</h3>
     <div class="row">
-      <label>Remind me every
+      <label>Poke me every
         <select id="interval">
           <option value="15">15 min</option><option value="30">30 min</option>
           <option value="60">60 min</option><option value="0">never</option>
         </select>
       </label>
-      <button id="notifBtn">Enable notifications</button>
+      <button id="notifBtn">Allow pokes 🔔</button>
     </div>
-    <p class="meta">Reminders fire while this page is open (tab can be in the background). Install it to your home screen / keep it pinned for best results.</p>
+    <p class="meta">Pip can only poke while this page is open (background tabs are fine).</p>
   </section>
 </main>
 <script src="app.js"></script>
