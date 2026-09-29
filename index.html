@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Just Start</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#111827">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+  <header>
+    <h1>Just Start</h1>
+    <div class="stats"><span id="streak"></span><span id="doneCount"></span></div>
+  </header>
+
+  <div id="banner" class="banner" hidden></div>
+
+  <section id="focus" class="card focus" hidden>
+    <p class="label">The one you keep avoiding</p>
+    <h2 id="focusTitle"></h2>
+    <p id="focusMeta" class="meta"></p>
+    <label class="step">Smallest possible first step
+      <input id="focusStep" placeholder="e.g. open the file and write one sentence">
+    </label>
+    <div id="timer" class="timer" hidden>
+      <div id="clock">02:00</div>
+      <div id="timerMsg"></div>
+    </div>
+    <div class="actions" id="focusActions">
+      <button id="sprintBtn" class="primary">Start 2-minute sprint</button>
+      <button id="doneBtn">Already done</button>
+      <button id="skipBtn" class="ghost">Not now</button>
+    </div>
+    <div class="actions" id="timerActions" hidden>
+      <button id="keepBtn" class="primary">Keep going 25 min</button>
+      <button id="finishBtn">Finished it</button>
+      <button id="stopBtn" class="ghost">Stop</button>
+    </div>
+  </section>
+
+  <form id="addForm" class="card add">
+    <input id="title" placeholder="What are you putting off?" required autocomplete="off">
+    <div class="row">
+      <label>Dread
+        <select id="dread">
+          <option value="1">1 – meh</option><option value="2">2</option>
+          <option value="3" selected>3</option><option value="4">4</option>
+          <option value="5">5 – ugh</option>
+        </select>
+      </label>
+      <label>Due <input type="date" id="due"></label>
+      <button class="primary" type="submit">Add</button>
+    </div>
+  </form>
+
+  <section class="card">
+    <h3>Backlog <small>(most avoided first)</small></h3>
+    <ul id="list"></ul>
+    <p id="empty" class="meta" hidden>Nothing pending. Suspiciously productive.</p>
+  </section>
+
+  <section class="card">
+    <h3>Nudges</h3>
+    <div class="row">
+      <label>Remind me every
+        <select id="interval">
+          <option value="15">15 min</option><option value="30">30 min</option>
+          <option value="60">60 min</option><option value="0">never</option>
+        </select>
+      </label>
+      <button id="notifBtn">Enable notifications</button>
+    </div>
+    <p class="meta">Reminders fire while this page is open (tab can be in the background). Install it to your home screen / keep it pinned for best results.</p>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
