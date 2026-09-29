@@ -1,1 +1,2 @@
-{"name":"Just Start","short_name":"Just Start","start_url":"./index.html","display":"standalone","background_color":"#0f172a","theme_color":"#111827","icons":[]}
+{"name":"Pip – Just Start","short_name":"Pip","start_url":"./index.html","scope":"./","display":"standalone","background_color":"#fff5f7","theme_color":"#ffd6e0",
+"icons":[{"src":"icons/icon-192.png","sizes":"192x192","type":"image/png"},{"src":"icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}]}

@@ -199,3 +199,5 @@ if ('Notification' in window && Notification.permission === 'granted') $('notifB
 render();
 setInterval(maybeNudge, 30000);
 document.addEventListener('visibilitychange', () => { if (!document.hidden) maybeNudge(); });
+
+if ('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('sw.js').catch(() => {});
